@@ -12,11 +12,15 @@ dotfiles_repo_version: master
 dotfiles_repo_accept_hostkey: yes
 dotfiles_repo_local_destination: ~/.dotfiles-sync
 dotfiles_files:
-  - .zshrc
+  - .aliases.zsh
+  - .gitconfig
   - .gitignore
-  - .inputrc
+  - .hushlogin
   - .osx
+  - .variables.zsh
   - .vimrc
+  - .zshrc
+  - pip.conf
 
 homebrew_installed_packages:
   - awscli
@@ -73,6 +77,7 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
+  - istat-menus
   - 1password
   - alfred
   - brave-browser
