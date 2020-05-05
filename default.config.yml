@@ -1,5 +1,5 @@
 ---
-downloads: ~/.ansible-downloads/
+ansible_downloads: ~/.ansible-downloads/
 
 configure_dotfiles: yes
 configure_sudoers: yes

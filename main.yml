@@ -9,17 +9,19 @@
     - include_vars: "{{ item }}"
       with_fileglob:
         - "{{ playbook_dir }}/config.yml"
-      tags: ['always']
+      tags: ["always"]
 
   roles:
     - role: geerlingguy.homebrew
-      tags: ['homebrew']
+      tags: ["homebrew"]
+
     - role: geerlingguy.dotfiles
       when: configure_dotfiles
-      tags: ['dotfiles']
+      tags: ["dotfiles"]
+
     - role: geerlingguy.mas
       when: mas_installed_apps
-      tags: ['mas']
+      tags: ["mas"]
 
   tasks:
     - include_tasks: tasks/ansible-setup.yml
@@ -32,10 +34,7 @@
 
     - include_tasks: tasks/osx.yml
       when: configure_osx
-      tags: ['osx']
-
-    - include_tasks: tasks/extra-packages.yml
-      tags: ['extra-packages']
+      tags: ["osx"]
 
     - name: Run configured post-provision ansible task files.
       include_tasks: "{{ outer_item }}"
