@@ -9,7 +9,12 @@
     - include_vars: "{{ item }}"
       with_fileglob:
         - "{{ playbook_dir }}/config.yml"
+        - "{{ playbook_dir }}/vscode.config.yml"
       tags: ["always"]
+    - name: Get current username
+      shell: whoami
+      changed_when: false
+      register: current_username
 
   roles:
     - role: geerlingguy.homebrew
@@ -22,6 +27,12 @@
     - role: geerlingguy.mas
       when: mas_installed_apps
       tags: ["mas"]
+
+    - role: gantsign.visual-studio-code
+      when: configure_vscode
+      tags: ["apps"]
+      users: "{{ item }}"
+      with_items: "{{ vscode_config }}"
 
   tasks:
     - include_tasks: tasks/ansible-setup.yml

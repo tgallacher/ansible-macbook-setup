@@ -6,6 +6,8 @@ configure_sudoers: yes
 # TODO: Update Terminal config
 configure_terminal: no
 configure_osx: yes
+# Requires `vscode.config.yml` if `yes`
+configure_vscode: yes
 
 dotfiles_repo: https://github.com/tgallacher/dotfiles.git
 dotfiles_repo_version: master
