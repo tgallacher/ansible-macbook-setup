@@ -1,2 +1,5 @@
 visual_studio_code_settings: {}
-visual_studio_code_extensions: []
+
+vscode_install_extensions: []
+
+vscode_remove_extensions: []

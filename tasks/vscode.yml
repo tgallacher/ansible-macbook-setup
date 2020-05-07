@@ -1,0 +1,21 @@
+---
+# FIXME: see comment `gantsign.visual-studio-code`
+- name: Install VSCode extension(s)
+  # FIXME: Get the shell to load $PATH
+  shell: "/usr/local/bin/code --install-extension {{ item }}"
+  become: no
+  register: vscode_install_extensions_result
+  when:
+    - vscode_install_extensions is defined
+  loop: "{{ vscode_install_extensions }}"
+  changed_when: vscode_install_extensions_result is defined and vscode_install_extensions_result.stdout is not search('is already installed.')
+
+- name: Uninstall VSCode extension(s)
+  # FIXME: Get the shell to load $PATH
+  shell: "/usr/local/bin/code --uninstall-extension {{ item }}"
+  become: no
+  register: vscode_remove_extensions_result
+  when:
+    - vscode_remove_extensions is defined
+  loop: "{{ vscode_remove_extensions }}"
+  changed_when: vscode_remove_extensions_result is defined and vscode_remove_extensions_result.stdout is search('successfully uninstalled')
