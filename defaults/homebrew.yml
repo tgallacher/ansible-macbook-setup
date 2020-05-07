@@ -1,0 +1,96 @@
+---
+# Lists are in alphabetical order
+#
+# OSX apps (available in brew)
+homebrew_cask_appdir: /Applications
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+
+# ql* utils are from:
+# Quick Look Plugins (https://github.com/sindresorhus/quick-look-plugins)
+homebrew_cask_apps:
+  - istat-menus
+  - 1password
+  - alfred
+  - brave-browser
+  # - burp-suite
+  - docker
+  - dropbox
+  - evernote
+  # - firefox
+  - font-menlo-for-powerline
+  - font-source-code-pro-for-powerline
+  - google-chrome
+  - handbrake
+  - iterm2
+  # - licecap
+  - makemkv
+  - nordvpn
+  - qlcolorcode
+  - qlimagesize
+  - qlmarkdown
+  - qlstephen
+  - qlvideo
+  - quicklook-json
+  - slack
+  - spotify
+  - station
+  # - sublime-text
+  - toggl
+  # - transmit
+  - vagrant
+  - visual-studio-code
+  - vlc
+
+homebrew_cask_uninstalled_apps: []
+
+# CLI utils
+homebrew_installed_packages:
+  - awscli
+  - coreutils
+  - curl
+  - moreutils
+  - findutils
+  - git
+  - git-secrets
+  - bash-completion
+  - direnv
+  - dwdiff
+  - gifsicle
+  - git
+  - go
+  - { name: gnu-sed, install_options: "with-default-names" }
+  - gnupg
+  - grep
+  - httpie
+  - ifstat
+  - iperf
+  - jq
+  - nmap
+  - node
+  - oniguruma
+  - openssh
+  - openssl
+  - openvpn
+  - pcre2
+  - popt
+  - pwgen
+  - python3
+  - readline
+  - screen
+  - shared-mime-info
+  - sqlite
+  - ssh-copy-id
+  - terraform
+  - trash
+  - tree
+  - webp
+  - { name: wget, install_options: "with-iri" }
+  - wrk
+  - x265
+  - xz
+  - vim
+  - yarn
+
+homebrew_uninstalled_packages: []

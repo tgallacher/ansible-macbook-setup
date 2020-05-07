@@ -2,14 +2,20 @@
 - hosts: all
   connection: local
 
+  # TOOD: This is a bit ugly
   vars_files:
-    - default.config.yml
+    - defaults/dotfiles.yml
+    - defaults/vscode.yml
+    - defaults/main.yml
+    - defaults/homebrew.yml
 
   pre_tasks:
+    # Separate config overrides into separate `config.*.yml` files as needed.
+    # Or, keep them all in a single `config.yml` file.
     - include_vars: "{{ item }}"
       with_fileglob:
-        - "{{ playbook_dir }}/config.yml"
-        - "{{ playbook_dir }}/vscode.config.yml"
+        - "{{ playbook_dir }}/config*.yml"
+        - wantlist=True
       tags: ["always"]
     - name: Get current username
       shell: whoami

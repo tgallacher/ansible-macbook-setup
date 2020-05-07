@@ -1,0 +1,17 @@
+---
+dotfiles_repo: https://github.com/tgallacher/dotfiles.git
+dotfiles_repo_version: master
+dotfiles_repo_accept_hostkey: yes
+
+dotfiles_repo_local_destination: ~/.ansible-dotfiles-sync
+dotfiles_home: "~"
+dotfiles_files:
+  - .aliases.zsh
+  - .gitconfig
+  - .gitignore
+  - .hushlogin
+  - .osx
+  - .variables.zsh
+  - .vimrc
+  - .zshrc
+  - pip.conf

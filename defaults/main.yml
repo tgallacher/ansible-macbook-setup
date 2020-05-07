@@ -1,0 +1,21 @@
+---
+ansible_downloads: ~/.ansible-downloads/
+
+configure_dotfiles: yes
+configure_homebrew: yes
+configure_sudoers: yes
+# TODO: Update Terminal config
+configure_terminal: no
+configure_osx: yes
+
+# Requires vscode settings to be placed in a `config.yml`
+# or a separate file, e.g: config.vscode.yml
+configure_vscode: yes
+
+# See `geerlingguy.mas` role documentation for usage instructions.
+mas_installed_apps: []
+mas_email: ""
+mas_password: ""
+
+# From dotfiles
+osx_script: "~/.osx --no-restart"
