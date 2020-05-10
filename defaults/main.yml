@@ -4,9 +4,9 @@ ansible_downloads: ~/.ansible-downloads/
 configure_dotfiles: yes
 configure_homebrew: yes
 configure_sudoers: yes
-# TODO: Update Terminal config
-configure_terminal: no
-configure_osx: yes
+configure_terminal: yes
+# FIXME: OSX script seems broken..?
+configure_osx: no
 
 # Requires vscode settings to be placed in a `config.yml`
 # or a separate file, e.g: config.vscode.yml

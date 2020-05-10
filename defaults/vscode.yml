@@ -1,5 +1,144 @@
-visual_studio_code_settings: {}
+visual_studio_code_extensions:
+  - AlanWalk.markdown-toc
+  - alexkrechik.cucumberautocomplete
+  - anseki.vscode-color
+  - Arjun.swagger-viewer
+  - ban.spellright
+  - bierner.markdown-preview-github-styles
+  - CoenraadS.bracket-pair-colorizer
+  - dawhite.mustache
+  - dbaeumer.vscode-eslint
+  - eamodio.gitlens
+  - EditorConfig.EditorConfig
+  - Equinusocio.vsc-community-material-theme
+  - Equinusocio.vsc-material-theme
+  - equinusocio.vsc-material-theme-icons
+  - esbenp.prettier-vscode
+  - felixfbecker.php-debug
+  - felixfbecker.php-intellisense
+  - felixfbecker.php-pack
+  - file-icons.file-icons
+  - formulahendry.auto-rename-tag
+  - GrapeCity.gc-excelviewer
+  - idleberg.applescript
+  - juanmnl.vscode-theme-1984
+  - mauve.terraform
+  - mgmcdermott.vscode-language-babel
+  - mohsen1.prettify-json
+  - ms-azuretools.vscode-docker
+  - ms-python.python
+  - ms-vscode.sublime-keybindings
+  - ms-vscode.Theme-TomorrowKit
+  - ms-vsliveshare.vsliveshare
+  - msjsdiag.debugger-for-chrome
+  - naumovs.color-highlight
+  - Orta.vscode-jest
+  - patbenatar.advanced-new-file
+  - paulmolluzzo.convert-css-in-js
+  - sdras.night-owl
+  - shanoor.vscode-nginx
+  - silvenon.mdx
+  - sleistner.vscode-fileutils
+  - stkb.rewrap
+  - Tyriar.sort-lines
+  - vscode-icons-team.vscode-icons
+  - WallabyJs.quokka-vscode
+  - wayou.vscode-todo-highlight
+  - wwm.better-align
+  - yzane.markdown-pdf
 
-vscode_install_extensions: []
+visual_studio_code_settings:
+  {
+    "advancedNewFile.convenienceOptions": ["current", "last", "root"],
+    "breadcrumbs.enabled": true,
+    "editor.codeActionsOnSave": { "source.fixAll.eslint": true },
+    "editor.codeLens": false,
+    "editor.find.autoFindInSelection": true,
+    "editor.find.seedSearchStringFromSelection": true,
+    "editor.fontSize": 12,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.lightbulb.enabled": false,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.renderControlCharacters": true,
+    "editor.renderWhitespace": "boundary",
+    "editor.scrollBeyondLastLine": false,
+    "editor.showFoldingControls": "always",
+    "editor.snippetSuggestions": "top",
+    "editor.stablePeek": true,
+    "editor.tabSize": 2,
+    "editor.wordWrap": "off",
+    "editor.wordWrapColumn": 120,
+    "editor.wrappingIndent": "indent",
+    "eslint.alwaysShowStatus": true,
+    "eslint.autoFixOnSave": true,
+    "eslint.packageManager": "yarn",
+    "eslint.validate":
+      [
+        { "language": "javascript", "autoFix": true },
+        { "language": "javascriptreact", "autoFix": true },
+        { "language": "typescript", "autoFix": true },
+        { "language": "typescriptreact", "autoFix": true },
+      ],
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.openEditors.visible": 0,
+    "extensions.ignoreRecommendations": false,
+    "files.eol": "\n",
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "flow.useNPMPackagedFlow": true,
+    "gitlens.advanced.telemetry.enabled": false,
+    "html.format.wrapLineLength": 0,
+    "javascript.validate.enable": false,
+    "markdown-toc.depthFrom": 2,
+    "materialTheme.accent": "Orange",
+    "sync.autoUpload": true,
+    "sync.gist": "d96c6411c490246d322acc53d62fc759",
+    "sync.removeExtensions": false,
+    "telemetry.enableTelemetry": false,
+    "terminal.integrated.shell.osx": "/bin/zsh",
+    "terraform.codelens.enabled": false,
+    "todohighlight.defaultStyle": {},
+    "todohighlight.isCaseSensitive": false,
+    "typescript.preferences.quoteStyle": "single",
+    "window.openFilesInNewWindow": "off",
+    "window.title": "${activeEditorMedium}${separator}${rootName}",
+    "window.zoomLevel": 0,
+    "workbench.colorCustomizations":
+      {
+        "editor.selectionBackground": "#25327a",
+        "activityBarBadge.background": "#FF7042",
+        "list.activeSelectionForeground": "#FF7042",
+        "list.inactiveSelectionForeground": "#FF7042",
+        "list.highlightForeground": "#FF7042",
+        "scrollbarSlider.activeBackground": "#FF704250",
+        "editorSuggestWidget.highlightForeground": "#FF7042",
+        "textLink.foreground": "#FF7042",
+        "progressBar.background": "#FF7042",
+        "pickerGroup.foreground": "#FF7042",
+        "tab.activeBorder": "#FF7042",
+        "notificationLink.foreground": "#FF7042",
+        "editorWidget.resizeBorder": "#FF7042",
+        "editorWidget.border": "#FF7042",
+        "settings.modifiedItemIndicator": "#FF7042",
+        "settings.headerForeground": "#FF7042",
+        "panelTitle.activeBorder": "#FF7042",
+        "breadcrumb.activeSelectionForeground": "#FF7042",
+        "menu.selectionForeground": "#FF7042",
+        "menubar.selectionForeground": "#FF7042",
+        "editor.findMatchBorder": "#FF7042",
+        "selection.background": "#FF704240",
+      },
+    "workbench.colorTheme": "Night Owl",
+    "workbench.editor.labelFormat": "medium",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.startupEditor": "none",
+  }
 
-vscode_remove_extensions: []
+vscode_remove_extensions:
+  - annsk.alignment
+  - flowtype.flow-for-vscode
+  - ivory-lab.jenkinsfile-support
+  - Shan.code-settings-sync
+  - yo1dog.cursor-align

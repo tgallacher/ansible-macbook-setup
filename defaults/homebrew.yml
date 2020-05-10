@@ -10,21 +10,18 @@ homebrew_taps:
 # ql* utils are from:
 # Quick Look Plugins (https://github.com/sindresorhus/quick-look-plugins)
 homebrew_cask_apps:
-  - istat-menus
   - 1password
   - alfred
   - brave-browser
-  # - burp-suite
   - docker
   - dropbox
   - evernote
-  # - firefox
   - font-menlo-for-powerline
   - font-source-code-pro-for-powerline
   - google-chrome
   - handbrake
+  - istat-menus
   - iterm2
-  # - licecap
   - makemkv
   - nordvpn
   - qlcolorcode
@@ -36,12 +33,15 @@ homebrew_cask_apps:
   - slack
   - spotify
   - station
-  # - sublime-text
   - toggl
-  # - transmit
   - vagrant
   - visual-studio-code
   - vlc
+  # - burp-suite
+  # - firefox
+  # - licecap
+  # - sublime-text
+  # - transmit
 
 homebrew_cask_uninstalled_apps: []
 
