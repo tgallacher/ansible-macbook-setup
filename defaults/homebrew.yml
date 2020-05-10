@@ -47,26 +47,28 @@ homebrew_cask_uninstalled_apps: []
 
 # CLI utils
 homebrew_installed_packages:
+  - { name: gnu-sed, install_options: "with-default-names" }
+  - { name: wget, install_options: "with-iri" }
+  - antigen
   - awscli
+  - bash-completion
   - coreutils
   - curl
-  - moreutils
-  - findutils
-  - git
-  - git-secrets
-  - bash-completion
   - direnv
   - dwdiff
+  - findutils
   - gifsicle
   - git
-  - go
-  - { name: gnu-sed, install_options: "with-default-names" }
+  - git
+  - git-secrets
   - gnupg
+  - go
   - grep
   - httpie
   - ifstat
   - iperf
   - jq
+  - moreutils
   - nmap
   - node
   - oniguruma
@@ -85,12 +87,11 @@ homebrew_installed_packages:
   - terraform
   - trash
   - tree
+  - vim
   - webp
-  - { name: wget, install_options: "with-iri" }
   - wrk
   - x265
   - xz
-  - vim
   - yarn
 
 homebrew_uninstalled_packages: []
