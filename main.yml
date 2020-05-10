@@ -7,6 +7,7 @@
     - defaults/vscode.yml
     - defaults/main.yml
     - defaults/homebrew.yml
+    - defaults/terminal.yml
 
   pre_tasks:
     # Separate config overrides into separate `config.*.yml` files as needed.

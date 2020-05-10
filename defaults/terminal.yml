@@ -1,0 +1,45 @@
+zsh_antigen_bundles:
+  - { name: httpie, command: http }
+  - brew
+  - brew-cask
+  - colored-man-pages
+  - docker
+  - docker-compose
+  - fancy-ctrl-z
+  - git
+  - git-extras
+  - gnu-utils
+  - npm
+  - yarn
+  - zsh_reload
+  - zsh-users/zsh-autosuggestions
+  - zsh-users/zsh-syntax-highlighting
+
+zsh_antigen_theme: ""
+
+zsh_hotkeys_extras: []
+
+# only single quotes allowed in action
+zsh_aliases: []
+
+# Set up a dynamic profile
+#
+# Options not inside `Profiles` node are related to iterm2 app and are also
+# available inside the plist file, com.googlecode.iterm2.
+#
+# All other settings, not available in the plist file, are set using the `Profiles` node.
+#
+# @todo: Move "profile" here and simplify the profile j2 file
+# @todo: Better way to indicate the data type for the upstream command?
+#
+# For options:
+# @see: https://github.com/gnachman/iTerm2/blob/master/api/library/python/iterm2/iterm2/preferences.py#L13-L103
+iterm_general_options:
+  # bottom
+  - StatusBarPosition -int 1
+  # Minimal
+  - TabStyleWithAutomaticOption -int 5
+  # Show tab when only 1
+  - HideTab -bool false
+  # Put border around terminal window
+  - UseBorder -int 1
