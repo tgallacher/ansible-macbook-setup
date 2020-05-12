@@ -6,18 +6,23 @@ homebrew_cask_appdir: /Applications
 homebrew_taps:
   - homebrew/core
   - homebrew/cask
+  - homebrew/cask-fonts
+
+# It's ok we have some apps installed external to Brew
+homebrew_cask_accept_external_apps: true
 
 # ql* utils are from:
 # Quick Look Plugins (https://github.com/sindresorhus/quick-look-plugins)
-homebrew_cask_apps:
+homebrew_install_cask_apps:
   - 1password
   - alfred
   - brave-browser
   - docker
-  - dropbox
-  - evernote
-  - font-menlo-for-powerline
-  - font-source-code-pro-for-powerline
+  # - dropbox
+  # - evernote
+  # - font-menlo-for-powerline
+  # - font-source-code-pro-for-powerline
+  - font-meslo-for-powerline
   - google-chrome
   - handbrake
   - istat-menus
@@ -33,8 +38,10 @@ homebrew_cask_apps:
   - slack
   - spotify
   - station
-  - toggl
+  # - toggl
   - vagrant
+  - virtualbox
+  - virtualbox-extension-pack
   - visual-studio-code
   - vlc
   # - burp-suite
@@ -43,12 +50,18 @@ homebrew_cask_apps:
   # - sublime-text
   # - transmit
 
+# Extra Casks to install, in addition to the defaults above
+homebrew_install_cask_addn_apps: []
+
+# This is the anisble role var; join the defaults with additional cask apps to install
+# Note: If you override this var, then you will need to include any additional cask apps as well;
+# i.e. the `homebrew_install_cask_addn_apps` won't have an effect
+homebrew_cask_apps: "{{ homebrew_install_cask_apps + homebrew_install_cask_addn_apps }}"
+
 homebrew_cask_uninstalled_apps: []
 
 # CLI utils
 homebrew_installed_packages:
-  - { name: gnu-sed, install_options: "with-default-names" }
-  - { name: wget, install_options: "with-iri" }
   - antigen
   - awscli
   - bash-completion
@@ -59,8 +72,8 @@ homebrew_installed_packages:
   - findutils
   - gifsicle
   - git
-  - git
   - git-secrets
+  - gnu-sed
   - gnupg
   - go
   - grep
@@ -79,7 +92,6 @@ homebrew_installed_packages:
   - popt
   - pwgen
   - python3
-  - readline
   - screen
   - shared-mime-info
   - sqlite
@@ -89,9 +101,9 @@ homebrew_installed_packages:
   - tree
   - vim
   - webp
+  - wget
   - wrk
   - x265
-  - xz
   - yarn
 
 homebrew_uninstalled_packages: []
