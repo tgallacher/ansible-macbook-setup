@@ -10,7 +10,7 @@ Ansible playbook to configure and manage my dev Macs. A much overdue attempt to 
 
 1. Ensure Apple's command line tools are installed (`xcode-select --install` to launch the installer).
 1. Install `pip` - `sudo easy_install pip`;
-1. Ensure python dir is in PATH - `export PATH=`;
+1. Ensure python dir is in PATH - `export PATH="~/Library/Python/<version>/bin:$PATH"`;
 1. Install Ansible - `pip install ansible`;
 1. Clone the repo and from the repo root;
 1. Run `ansible-galaxy install -r requirements.yml`;
