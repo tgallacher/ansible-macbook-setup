@@ -29,9 +29,11 @@ You can filter which part of the provisioning process to run by specifying the s
 $ ansible-playbook main.yml -i inventory -K --tags "core"
 ```
 
-## Overriding Defaults
+## Customising
 
-Running this as-is will bring in my dev setup on your mac; this is almost certainly not what you want. Instead, the defaults can be overridden by supplying any file `config*.yml`. For example, you can customize the installed packages and apps with something like:
+To see what variables exist for cusotmising the install, check the `defaults/*.yml` files ore the docs for the installed ansible roles (see `requirements.yml` for a list of installed roles used in this playbook).
+
+Running this playbook without any changes will bring in my dev setup on your mac; this is almost certainly _not_ what you are after. Instead, override the defaults by supplying any file named `config*.yml`. For example, you can customize the installed packages and apps with something like:
 
 ```yaml
 homebrew_installed_packages:
