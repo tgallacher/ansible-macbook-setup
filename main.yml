@@ -1,5 +1,4 @@
 - hosts: all
-  # connection: local
 
   # TOOD: This is a bit ugly
   vars_files:
