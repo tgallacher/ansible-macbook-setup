@@ -83,7 +83,6 @@ homebrew_installed_packages:
   - jq
   - moreutils
   - nmap
-  - node
   - oniguruma
   - openssh
   - openssl
@@ -107,5 +106,6 @@ homebrew_installed_packages:
   - yarn
 
 homebrew_uninstalled_packages:
- - python
- - python3
+  - node
+  - python
+  - python3

@@ -5,6 +5,7 @@ configure_dotfiles: yes
 configure_homebrew: yes
 configure_sudoers: yes
 configure_terminal: yes
+configure_nvm: yes
 # FIXME: OSX script seems broken..?
 configure_osx: no
 

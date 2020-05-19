@@ -39,6 +39,14 @@
           visual_studio_code_settings_overwrite: yes
           visual_studio_code_settings: "{{ visual_studio_code_settings }}"
 
+    - role: markosamuli.nvm
+      when: configure_nvm|bool
+      nvm_shell_profile_scripts:
+        - .nvm.zshlocal
+      nvm_node_versions:
+        - "{{ nvm_default_node_version }}"
+        - 8.11.4
+
   tasks:
     - include_tasks: tasks/ansible-setup.yml
 
