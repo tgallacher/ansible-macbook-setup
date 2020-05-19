@@ -91,7 +91,7 @@ homebrew_installed_packages:
   - pcre2
   - popt
   - pwgen
-  - python3
+  - pyenv
   - screen
   - shared-mime-info
   - sqlite
@@ -106,4 +106,6 @@ homebrew_installed_packages:
   - x265
   - yarn
 
-homebrew_uninstalled_packages: []
+homebrew_uninstalled_packages:
+ - python
+ - python3
