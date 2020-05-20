@@ -41,6 +41,7 @@
 
     - role: markosamuli.nvm
       when: configure_nvm|bool
+      nvm_shell_init: false
       nvm_shell_profile_scripts:
         - .nvm.zshlocal
       nvm_node_versions:
