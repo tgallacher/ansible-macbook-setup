@@ -7,12 +7,12 @@ dotfiles_repo_local_destination: ~/.ansible-dotfiles-sync
 dotfiles_home: "~"
 dotfiles_files:
   - .aliases.zsh
-  - .antigenrc
+  - .antibodyrc
   - .gitconfig
   - .gitignore
   - .hushlogin
   - .osx
-  - .powerlevel9k.zsh
+  - .p10k.zsh
   - .variables.zsh
   - .vimrc
   - .wgetrc
