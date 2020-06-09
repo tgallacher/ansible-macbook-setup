@@ -46,7 +46,6 @@
         - .nvm.zshlocal
       nvm_node_versions:
         - "{{ nvm_default_node_version }}"
-        - 8.11.4
 
   tasks:
     - include_tasks: tasks/ansible-setup.yml
