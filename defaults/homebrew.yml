@@ -4,95 +4,86 @@
 # OSX apps (available in brew)
 homebrew_cask_appdir: /Applications
 homebrew_taps:
-  - homebrew/core
+  - github/gh
   - homebrew/cask
   - homebrew/cask-fonts
+  - homebrew/core
 
 # It's ok we have some apps installed external to Brew
 homebrew_cask_accept_external_apps: true
 
-# ql* utils are from:
-# Quick Look Plugins (https://github.com/sindresorhus/quick-look-plugins)
+# Notes:
+#   - ql* utils are from:Quick Look Plugins (https://github.com/sindresorhus/quick-look-plugins)
+#   - Quick look plugins might not work on M1 macs
+#     see: https://github.com/sindresorhus/quick-look-plugins/issues/126
 homebrew_install_cask_apps:
   - 1password
   - alfred
+  - apparency # ql plugin
   - brave-browser
   - docker
-  # - dropbox
-  # - evernote
-  # - font-menlo-for-powerline
-  # - font-source-code-pro-for-powerline
   - font-meslo-for-powerline
   - google-chrome
-  - handbrake
   - istat-menus
   - iterm2
-  - makemkv
-  - nordvpn
   - qlcolorcode
   - qlimagesize
   - qlmarkdown
   - qlstephen
   - qlvideo
   - quicklook-json
-  - slack
+  - rectangle
   - spotify
-  - station
-  # - toggl
-  - vagrant
-  - virtualbox
-  - virtualbox-extension-pack
-  - visual-studio-code
   - vlc
+  - vscodium
+  # - font-menlo-for-powerline
+  # - font-source-code-pro-for-powerline
   # - burp-suite
   # - firefox
-  # - licecap
-  # - sublime-text
-  # - transmit
 
 # Extra Casks to install, in addition to the defaults above
 homebrew_install_cask_addn_apps: []
 
-# This is the anisble role var; join the defaults with additional cask apps to install
-# Note: If you override this var, then you will need to include any additional cask apps as well;
-# i.e. the `homebrew_install_cask_addn_apps` won't have an effect
+# This is the anisble role var; join the defaults with additional cask apps to install.
+#   Note: If you override this var, then you will need to include any additional cask apps as well.
 homebrew_cask_apps: "{{ homebrew_install_cask_apps + homebrew_install_cask_addn_apps }}"
 
 homebrew_cask_uninstalled_apps: []
 
 # CLI utils
-homebrew_installed_packages:
+homebrew_installed_base_packages:
   - antigen
-  - awscli
   - bash-completion
   - coreutils
   - curl
   - direnv
   - dwdiff
   - findutils
-  - gifsicle
   - git
   - git-secrets
   - gnu-sed
   - gnupg
-  - go
   - grep
   - httpie
   - ifstat
   - iperf
   - jq
+  - k9s
+  - kubectl
+  - kubectx
   - moreutils
+  - neovim
   - nmap
-  - oniguruma
   - openssh
   - openssl
   - openvpn
   - pcre2
-  - popt
   - pwgen
   - pyenv
   - screen
   - shared-mime-info
+  - shellcheck
+  - shfmt
   - sqlite
   - ssh-copy-id
   - terraform
@@ -104,6 +95,12 @@ homebrew_installed_packages:
   - wrk
   - x265
   - yarn
+
+homebrew_installed_addn_packages: []
+
+# This is the anisble role var; join the defaults with additional packages to install.
+#   Note: If you override this var, then you will need to include any additional cask apps as well.
+homebrew_installed_packages: "{{ homebrew_installed_base_packages + homebrew_installed_addn_packages }}"
 
 homebrew_uninstalled_packages:
   - node
