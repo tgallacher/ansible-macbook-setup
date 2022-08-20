@@ -1,20 +1,17 @@
 ---
 dotfiles_repo: https://github.com/tgallacher/dotfiles.git
-dotfiles_repo_version: master
+dotfiles_repo_version: main
 dotfiles_repo_accept_hostkey: yes
-
 dotfiles_repo_local_destination: ~/.ansible-dotfiles-sync
 dotfiles_home: "~"
 dotfiles_files:
-  - .aliases.zsh
-  - .antibodyrc
+  - .config/alacritty/
+  - .config/wget/
+  - .config/zsh/
   - .gitconfig
   - .gitignore
   - .hushlogin
   - .osx
-  - .p10k.zsh
-  - .variables.zsh
   - .vimrc
-  - .wgetrc
-  - .zshrc
+  - .zshenv
   - pip.conf
