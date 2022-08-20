@@ -1,14 +1,16 @@
 - hosts: all
 
-  # TOOD: This is a bit ugly
-  vars_files:
-    - defaults/dotfiles.yml
-    - defaults/vscode.yml
-    - defaults/main.yml
-    - defaults/homebrew.yml
-    - defaults/terminal.yml
-
   pre_tasks:
+    # load defaults
+    - include_vars: "{{ item }}"
+      with_fileglob:
+        - "{{ playbook_dir }}/defaults/*.yml"
+        # force array response
+        - wantlist=True
+      tags: ["always"]
+
+    # Load custom config overrides
+    #
     # Separate config overrides into separate `config.*.yml` files as needed.
     # Or, keep them all in a single `config.yml` file.
     - include_vars: "{{ item }}"
