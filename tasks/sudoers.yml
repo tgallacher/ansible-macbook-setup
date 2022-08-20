@@ -13,9 +13,9 @@
 
 # Sudoers configuration (enables more convenient Vagrant usage).
 - name: Copy sudoers configuration into place.
+  become: true
   template:
     src: templates/sudoers.j2
     dest: /etc/sudoers
     mode: 0440
     validate: 'visudo -cf %s'
-  become: yes
