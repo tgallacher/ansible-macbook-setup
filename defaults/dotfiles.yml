@@ -5,9 +5,9 @@ dotfiles_repo_accept_hostkey: yes
 dotfiles_repo_local_destination: ~/.ansible-dotfiles-sync
 dotfiles_home: "~"
 dotfiles_files:
-  - .config/alacritty/
-  - .config/wget/
-  - .config/zsh/
+  - .config/alacritty
+  - .config/wget
+  - .config/zsh
   - .gitconfig
   - .gitignore
   - .hushlogin

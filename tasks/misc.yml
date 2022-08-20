@@ -2,7 +2,7 @@
 # Required before linking new dotfiles structure
 - name: Ensure Home config dir is available
   file:
-    path: "{{ ansible_user_dir }}/.config"
+    path: "{{ dotfiles_home }}/.config"
     state: directory
 
 # see bootstrap.sh
