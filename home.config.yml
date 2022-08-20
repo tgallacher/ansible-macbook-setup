@@ -1,0 +1,18 @@
+#
+# Custom additional config for personal osx machine(s)
+#
+# Note:
+#   To load this file, change the name so that it has the format `config*.yml`
+#
+configure_dotfiles: yes
+configure_osx: no
+configure_vscode: no
+
+homebrew_install_cask_addn_apps:
+  - evernote
+  # - handbrake
+  # - makemkv
+  - nordvpn
+  - virtualbox
+  - virtualbox-extension-pack
+  - whatsapp
