@@ -53,7 +53,6 @@ homebrew_cask_uninstalled_apps: []
 # CLI utils
 homebrew_installed_base_packages:
   - antigen
-  - bash-completion
   - coreutils
   - curl
   - direnv
@@ -104,5 +103,3 @@ homebrew_installed_packages: "{{ homebrew_installed_base_packages + homebrew_ins
 
 homebrew_uninstalled_packages:
   - node
-  - python
-  - python3
