@@ -1,0 +1,12 @@
+---
+# Required before linking new dotfiles structure
+- name: Ensure Home config dir is available
+  file:
+    path: "{{ ansible_user_dir }}/.config"
+    state: directory
+
+# see bootstrap.sh
+- name: Remove temp zshrc file created during bootstrap
+  file:
+    path: "{{ ansible_user_dir }}/.tmp.zshrc"
+    state: absent

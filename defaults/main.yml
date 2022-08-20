@@ -8,15 +8,38 @@ configure_terminal: yes
 configure_nvm: yes
 # FIXME: OSX script seems broken..?
 configure_osx: no
+configure_dock: yes
 
 # Requires vscode settings to be placed in a `config.yml`
 # or a separate file, e.g: config.vscode.yml
-configure_vscode: yes
+configure_vscode: no
 
-# See `geerlingguy.mas` role documentation for usage instructions.
-mas_installed_apps: []
-mas_email: ""
-mas_password: ""
-
-# From dotfiles
+# 'osx' executable from dotfiles rep
 osx_script: "~/.osx --no-restart"
+
+# clean up doc!
+dockitems_remove:
+  - 'App Store'
+  - Books
+  - Calendar
+  - Contacts
+  - FaceTime
+  - Launchpad
+  - Mail
+  - Maps
+  - Messages
+  - Music
+  - News
+  - Notes
+  - Photos
+  - Podcasts
+  - Reminders
+  - Safari
+  - Siri
+  - 'System Preferences'
+  - TV
+
+dockitems_persist:
+  - name: Brave Browser
+    path: "/Applications/Brave Browser.app/"
+    pos: 2

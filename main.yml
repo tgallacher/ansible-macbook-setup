@@ -16,50 +16,65 @@
     - include_vars: "{{ item }}"
       with_fileglob:
         - "{{ playbook_dir }}/config*.yml"
+        # force array response
         - wantlist=True
       tags: ["always"]
 
   roles:
-    - role: geerlingguy.homebrew
+    - role: elliotweiser.osx-command-line-tools
+
+    - role: geerlingguy.mac.homebrew
       when: configure_homebrew|bool
-      tags: ["core"]
-
-    - role: geerlingguy.mas
-      when: mas_installed_apps|bool
-      tags: ["apps"]
-
-    - role: geerlingguy.dotfiles
-      when: configure_dotfiles|bool
-      tags: ["core"]
-
-    # FIXME: Figure why install extensions isn't working..
-    - role: gantsign.visual-studio-code
-      when: configure_vscode|bool
-      tags: ["apps"]
-      users:
-        - username: "{{ ansible_user_id }}"
-          visual_studio_code_settings_overwrite: yes
-          visual_studio_code_settings: "{{ visual_studio_code_settings }}"
+      tags: ["tools"]
 
     - role: markosamuli.nvm
       when: configure_nvm|bool
-      nvm_shell_init: false
-      nvm_shell_profile_scripts:
-        - .nvm.zshlocal
-      nvm_node_versions:
-        - "{{ nvm_default_node_version }}"
+      vars:
+        nvm_shell_init: false
+        nvm_shell_profile_scripts:
+          - .nvm.zshlocal
+        nvm_node_versions:
+          # defaults to "stable"
+          - "{{ nvm_default_node_version }}"
+      tags: ["tools"]
+
+    - role: geerlingguy.mac.dock
+      when: configure_dock|bool
+      tags: ['ui']
+
+    # FIXME: Figure why install extensions isn't working..
+    # - role: gantsign.visual-studio-code
+    #   when: configure_vscode|bool
+    #   tags: ["apps"]
+    #   users:
+    #     - username: "{{ ansible_user_id }}"
+    #       visual_studio_code_settings_overwrite: yes
+    #       visual_studio_code_settings: "{{ visual_studio_code_settings }}"
 
   tasks:
     - include_tasks: tasks/ansible-setup.yml
 
+    - include_tasks: tasks/misc.yml
+
     - include_tasks: tasks/sudoers.yml
       when: configure_sudoers|bool
+      tags: ["config"]
 
     - include_tasks: tasks/terminal.yml
       when: configure_terminal|bool
+      tags: ["tools"]
 
     - include_tasks: tasks/osx.yml
       when: configure_osx|bool
+      tags: ["ui", "config"]
 
     - include_tasks: tasks/vscode.yml
       when: configure_vscode|bool
+
+    # Do last to make sure all other config is in place first
+    # e.g. see `tasks/misc.yml`
+    - name: Set up dotfiles
+      when: configure_dotfiles|bool
+      import_role:
+        name: geerlingguy.dotfiles
+      tags: ["config"]

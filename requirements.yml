@@ -1,6 +1,9 @@
 ---
+roles:
+- name: elliotweiser.osx-command-line-tools
 - name: geerlingguy.dotfiles
-- name: geerlingguy.homebrew
-- name: geerlingguy.mas
-- name: gantsign.visual-studio-code
 - name: markosamuli.nvm
+# - name: gantsign.visual-studio-code
+
+collections:
+  - name: geerlingguy.mac
