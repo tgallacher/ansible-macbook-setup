@@ -6,20 +6,20 @@
     name: "{{ ansible_user_id }}"
     shell: /bin/zsh
 
-- name: Copy iTerm profile into place
-  template:
-    src: templates/iterm2-profile.json.j2
-    dest: "~/Library/Application Support/iTerm2/DynamicProfiles/iterm2-profile.json"
-    mode: u=rw,g=rw,o=
-    owner: "{{ ansible_user_id }}"
-    group: "{{ ansible_user_gid }}"
+# - name: Copy iTerm profile into place
+#   template:
+#     src: templates/iterm2-profile.json.j2
+#     dest: "~/Library/Application Support/iTerm2/DynamicProfiles/iterm2-profile.json"
+#     mode: u=rw,g=rw,o=
+#     owner: "{{ ansible_user_id }}"
+#     group: "{{ ansible_user_gid }}"
 
 - name: Configure iTerm2
   shell: "defaults write com.googlecode.iterm2 {{ item }}"
   with_items: "{{ iterm_general_options }}"
   ignore_errors: true
 
-# FIXME: Automate switching to the new (dynamic) profile. Possibly use iTerm2 "Triggers"?
-- name: Tmp Reminder prompt
-  debug:
-    msg: "Don't forget to set the loaded dynamic profile as the 'default' profile for the settings to be activated!"
+# # FIXME: Automate switching to the new (dynamic) profile. Possibly use iTerm2 "Triggers"?
+# - name: Tmp Reminder prompt
+#   debug:
+#     msg: "Don't forget to set the loaded dynamic profile as the 'default' profile for the settings to be activated!"
