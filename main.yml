@@ -52,7 +52,7 @@
     #       visual_studio_code_settings: "{{ visual_studio_code_settings }}"
 
   tasks:
-    - include_tasks: tasks/ansible-setup.yml
+    # - include_tasks: tasks/ansible-setup.yml
 
     - include_tasks: tasks/misc.yml
 
