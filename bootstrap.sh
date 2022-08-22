@@ -45,7 +45,7 @@ if [[ ! -f "$HOME/$_BOOTSTRAP_SEMAPHORE_FILENAME" ]]; then
     exit 1
   fi
 
-  pip install ansible
+  pip3 install ansible
 fi
 
 # Run Ansible
