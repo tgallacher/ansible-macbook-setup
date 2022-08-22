@@ -26,12 +26,12 @@ homebrew_install_cask_apps:
   - google-chrome
   - istat-menus
   - iterm2
-  - qlcolorcode
-  - qlimagesize
-  - qlmarkdown
-  - qlstephen
-  - qlvideo
-  - quicklook-json
+  # - qlcolorcode
+  # - qlimagesize
+  # - qlmarkdown
+  # - qlstephen
+  # - qlvideo
+  # - quicklook-json
   - rectangle
   - spotify
   - vlc
