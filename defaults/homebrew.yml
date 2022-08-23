@@ -35,7 +35,10 @@ homebrew_install_cask_apps:
   - rectangle
   - spotify
   - vlc
-  - vscodium
+  - visual-studio-code
+  # OSS version (below) doesn't have Settings Sync (!) 
+  # see https://github.com/microsoft/vscode/issues/105310#issuecomment-693262654
+  # - vscodium
   # - font-menlo-for-powerline
   # - font-source-code-pro-for-powerline
   # - burp-suite
