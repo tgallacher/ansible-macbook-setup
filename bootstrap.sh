@@ -11,6 +11,8 @@
 # The pyhton install process is based on A ["right way to install python on OSX"](https://opensource.com/article/19/5/python-3-default-mac).
 #
 
+_TMP_ZSHRC_FILE=.tmp.zshrc
+
 _BOOTSTRAP_SEMAPHORE_FILENAME='.macbook-bootstrap-semaphore'
 
 # Make sure we only run this script once, on any given OSX device
@@ -33,9 +35,9 @@ if [[ ! -f "$HOME/$_BOOTSTRAP_SEMAPHORE_FILENAME" ]]; then
   # set as default version, globally
   pyenv global $PYTHON_VERS_LATEST
   # TODO: assumes zsh shell
-  echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n eval "$(pyenv init -)"\nfi' >>~/.tmp.zshrc
+  echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n eval "$(pyenv init -)"\nfi' >>~/$_TMP_ZSHRC_FILE
 
-  source ~/.tmp.zshrc
+  source ~/$_TMP_ZSHRC_FILE
 
   if [[ "$(which python)" != *'pyenv/shims/python'* ]]; then
     echo "ERROR::"
