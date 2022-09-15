@@ -2,7 +2,7 @@
 # .zshrc (and related) file(s).
 - name: Set zsh as default shell
   become: true
-  user:
+  ansible.builtin.user:
     name: "{{ ansible_user_id }}"
     shell: /bin/zsh
 
@@ -18,6 +18,13 @@
   shell: "defaults write com.googlecode.iterm2 {{ item }}"
   with_items: "{{ iterm_general_options }}"
   ignore_errors: true
+
+# https://github.com/zsh-users/antigen/issues/701#issuecomment-1129781560
+- name: Ensure autocompletions ZSH dir is available
+  ansible.builtin.file:
+    path: "{{ ansible_env.ZSH_CACHE_DIR }}/completions"
+    state: directory
+  when: ansible_env.ZSH_CACHE_DIR is defined
 
 # # FIXME: Automate switching to the new (dynamic) profile. Possibly use iTerm2 "Triggers"?
 # - name: Tmp Reminder prompt
